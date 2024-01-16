@@ -218,7 +218,7 @@ The Financial Trading Platform is a web-based application developed to facilitat
   - The platform should support the seamless integration of new features and trading strategies.
   - New modules can be added without affecting existing functionality.
 
-####4.3.2 Scalable Database Architecture
+#### 4.3.2 Scalable Database Architecture
 
 - **Requirements:**
   - The database architecture should be scalable to accommodate a growing user base.

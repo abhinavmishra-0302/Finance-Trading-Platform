@@ -269,6 +269,8 @@ The Financial Trading Platform is a web-based application developed to facilitat
 - **Data Availability:** Availability of real-time market data APIs for seamless integration.
 - **Internet Connectivity:** Users are assumed to have adequate internet connectivity for accessing the platform.
 
-## 8. Conclusion
+## 8. Updates
+
+## 9. Conclusion
 
 This Software Requirements Specification provides a detailed overview of the Financial Trading Platform, outlining its features, functionalities, and technical specifications. It serves as a comprehensive guide for the development team and stakeholders, ensuring a clear understanding of project requirements and expectations.

@@ -258,6 +258,63 @@ The Financial Trading Platform is a web-based application developed to facilitat
 
 - **Libraries:** Scikit-Learn, TensorFlow
 
+## 5.5 System Requirements
+
+### 5.5.1 Hardware Requirements
+
+- **Server Hardware:**
+  - Multi-core processors with sufficient processing power.
+  - Adequate RAM for handling concurrent user requests.
+  - Storage with redundancy for data reliability.
+
+- **Client Hardware:**
+  - Modern web browsers compatible with the platform.
+  - Devices with internet connectivity.
+
+### 5.5.2 Software Requirements
+
+- **Server Software:**
+  - Operating System: Linux-based distribution (e.g., Ubuntu Server).
+  - Web Server: Nginx or Apache.
+  - Database Management System: MongoDB for real-time data, PostgreSQL for relational data.
+  - Backend Frameworks: Node.js, Express.js, Python, Django.
+
+- **Client Software:**
+  - Web Browser: Google Chrome, Mozilla Firefox, Safari.
+
+### 5.5.3 Network Requirements
+
+- **Network Infrastructure:**
+  - High-speed internet connection for real-time data updates.
+  - Secure communication protocols (HTTPS) for data transfer.
+
+- **Data Backups:**
+  - Regular backups of critical data to prevent data loss.
+
+## 5.6 System Model and Life Cycle
+
+### 5.6.1 System Model
+
+The Financial Trading Platform adopts a client-server architecture with a three-tier structure. The client-side comprises a web-based interface developed using React.js and Redux, ensuring a dynamic and responsive user experience. The middle tier involves server-side processing, powered by Node.js and Express.js, managing core functionalities such as real-time data updates, algorithmic trading, and database interactions. The third tier involves Python and Django for additional backend services. The modular architecture allows for flexibility and easy integration of new features, ensuring scalability and maintainability.
+
+### 5.6.2 Life Cycle
+
+The development life cycle of the Financial Trading Platform follows an Agile methodology, specifically Scrum. The Agile approach enables iterative development cycles, allowing for continuous improvement and adaptation to evolving requirements. The project is divided into fixed-duration sprints, typically two to four weeks, with each sprint focusing on delivering a set of prioritized features. Regular sprint reviews and retrospectives ensure continuous feedback, addressing issues promptly and enhancing features based on user input.
+
+The Agile life cycle involves the following key phases:
+
+1. **Backlog Creation:** Features and tasks are compiled into a prioritized backlog.
+
+2. **Sprint Planning:** At the beginning of each sprint, the development team selects tasks from the backlog based on priority and complexity.
+
+3. **Development:** The development team works on implementing selected features during the sprint.
+
+4. **Testing:** Quality assurance and testing are integral throughout the development phase, ensuring that each feature meets the specified requirements.
+
+5. **Review and Retrospective:** At the end of each sprint, a review is conducted to showcase completed features, and a retrospective is held to discuss improvements and address challenges.
+
+6. **Deployment:** Completed features are deployed to a staging environment for testing and then to the production environment for user access.
+
 ## 6. Constraints
 
 - **Regulatory Compliance:** The system must adhere to financial regulations and security standards.
@@ -273,4 +330,4 @@ The Financial Trading Platform is a web-based application developed to facilitat
 
 ## 9. Conclusion
 
-This Software Requirements Specification provides a detailed overview of the Financial Trading Platform, outlining its features, functionalities, and technical specifications. It serves as a comprehensive guide for the development team and stakeholders, ensuring a clear understanding of project requirements and expectations.
+This Software Requirements Specification provides a detailed overview of the Financial Trading Platform, encompassing its features, functionalities, technical requirements, system model, and life cycle. It serves as a comprehensive guide for the development team and stakeholders, ensuring a clear understanding of project requirements and expectations. Regular updates will be made to this document to accommodate any changes in the project's scope or specifications.

@@ -410,5 +410,7 @@ The Agile life cycle involves the following key phases:
 
 ## 9. Conclusion
 
-This Software Requirements Specification provides a detailed overview of the Financial Trading Platform, outlining its features, functionalities, and technical specifications. It serves as a comprehensive guide for the development team and stakeholders, ensuring a clear understanding of project requirements and expectations.
+   This Software Requirements Specification provides a detailed overview of the Financial Trading Platform, outlining its features, functionalities, and technical specifications. It serves as a comprehensive guide for the development team and        stakeholders, ensuring a clear understanding of project requirements and expectations.
+
+   
 ---

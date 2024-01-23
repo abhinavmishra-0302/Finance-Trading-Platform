@@ -3,8 +3,8 @@
 ##
 
 ## By - Abhay Chaudhary (2101005)
-##      Abhinav Mishra (2101009)
-##      Akshat Kabra (2101023)
+##      &nbsp;Abhinav Mishra (2101009)
+##      &nbsp;Akshat Kabra (2101023)
 
 ##
 

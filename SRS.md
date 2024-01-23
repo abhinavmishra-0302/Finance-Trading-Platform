@@ -1,5 +1,9 @@
 # Software Requirements Specification (SRS) for Financial Trading Platform
 
+## By - Abhay Chahudhary (2101005)
+##      Abhinav Mishra (2101009)
+##      Akshat Kabra (2101023)
+
 
 1. [Introduction](#1-introduction)
    - 1.1 Purpose

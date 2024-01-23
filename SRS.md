@@ -1,6 +1,5 @@
 # Software Requirements Specification (SRS) for Financial Trading Platform
 
-**Index for Software Requirements Specification (SRS) - Financial Trading Platform:**
 
 1. [Introduction](#1-introduction)
    - 1.1 Purpose

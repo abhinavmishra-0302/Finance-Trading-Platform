@@ -77,7 +77,6 @@
 6. [Constraints](#6-constraints)
 7. [Assumptions and Dependencies](#7-assumptions-and-dependencies)
 8. [Updates](#8-updates)
-9. [Conclusion](#9-conclusion)
 ---
 
 ## 1. Introduction
@@ -379,21 +378,41 @@ The Financial Trading Platform adopts a client-server architecture with a three-
 
 ### 5.6.2 Life Cycle
 
-The development life cycle of the Financial Trading Platform follows an Agile methodology, specifically Scrum. The Agile approach enables iterative development cycles, allowing for continuous improvement and adaptation to evolving requirements. The project is divided into fixed-duration sprints, typically two to four weeks, with each sprint focusing on delivering a set of prioritized features. Regular sprint reviews and retrospectives ensure continuous feedback, addressing issues promptly and enhancing features based on user input.
+The development life cycle of the Financial Trading Platform aligns with an Agile methodology, incorporating key phases from concept to retirement. Specifically, the Agile approach, following Scrum principles, enables iterative development cycles, fostering continuous improvement and adaptation to evolving requirements. The project life cycle is divided into the following stages:
 
-The Agile life cycle involves the following key phases:
+1. **Concept:**
+   - The initial concept of the Financial Trading Platform is outlined, establishing the vision, goals, and objectives of the software product.
 
-1. **Backlog Creation:** Features and tasks are compiled into a prioritized backlog.
+2. **Inception or Requirement Identification:**
+   - Features and tasks are compiled into a prioritized backlog, providing a comprehensive list of requirements for the development team.
+   - At this stage, the inception involves creating the software requirements, including key features, functional and non-functional requirements, and technological considerations.
 
-2. **Sprint Planning:** At the beginning of each sprint, the development team selects tasks from the backlog based on priority and complexity.
+3. **Sprint Planning:**
+   - At the beginning of each sprint, the development team selects tasks from the backlog based on priority and complexity.
+   - The selected tasks align with the requirements identified during the inception, guiding the development efforts.
 
-3. **Development:** The development team works on implementing selected features during the sprint.
+4. **Development:**
+   - The development team works on implementing selected features during the sprint, translating the identified requirements into working functionalities.
+   - This phase involves the actual coding and programming of the Financial Trading Platform, adhering to the Agile principles of delivering incremental value.
 
-4. **Testing:** Quality assurance and testing are integral throughout the development phase, ensuring that each feature meets the specified requirements.
+5. **Testing:**
+   - Quality assurance and testing are integral throughout the development phase, ensuring that each feature meets the specified requirements.
+   - Rigorous testing is conducted to identify and rectify any issues or bugs in the system, ensuring the reliability and stability of the Financial Trading Platform.
 
-5. **Review and Retrospective:** At the end of each sprint, a review is conducted to showcase completed features, and a retrospective is held to discuss improvements and address challenges.
+6. **Review and Retrospective:**
+   - At the end of each sprint, a review is conducted to showcase completed features, allowing stakeholders to provide feedback on the implemented functionalities.
+   - A retrospective is held to discuss improvements and address challenges encountered during the development, fostering a culture of continuous improvement.
 
-6. **Deployment:** Completed features are deployed to a staging environment for testing and then to the production environment for user access.
+7. **Deployment:**
+   - Completed features are deployed to a staging environment for testing, validating the functionalities in a controlled environment.
+   - Subsequently, the features are deployed to the production environment for user access, allowing users to interact with and benefit from the latest additions to the Financial Trading Platform.
+
+8. **Maintenance:**
+   - Ongoing maintenance involves configuring system parameters, ensuring security measures, and maintaining log and audit trails.
+   - The maintenance phase is an integral part of the Agile life cycle, addressing any issues that arise after the release and ensuring the continuous reliability of the Financial Trading Platform.
+
+9. **Retirement:**
+   - The retirement phase involves the conclusion of the project, marking the completion of the Software Requirements Specification and the development life cycle.
 
 ## 6. Constraints
 
@@ -408,9 +427,10 @@ The Agile life cycle involves the following key phases:
 
 ## 8. Updates
 
-## 9. Conclusion
-
-   This Software Requirements Specification provides a detailed overview of the Financial Trading Platform, outlining its features, functionalities, and technical specifications. It serves as a comprehensive guide for the development team and        stakeholders, ensuring a clear understanding of project requirements and expectations.
+| Version | Date       | Updates |
+| ------- | ---------- | ------- |
+| 1.0     | 23-01-2024 | - Initial creation of the Software Requirements Specification (SRS) for the Financial Trading Platform. |
+| 1.1     | 25-01-2024 | - Added index. <br> - Modified and streamlined the life cycle description in Section 5.6.2 of the SRS. <br> - Removed the Conclusion section for a more concise document structure. <br> - Updates are made to enhance clarity and align with the iterative nature of Agile development. |
 
    
 ---

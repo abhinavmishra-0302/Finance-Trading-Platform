@@ -429,8 +429,8 @@ The development life cycle of the Financial Trading Platform aligns with an Agil
 
 | Version | Date       | Updates |
 | ------- | ---------- | ------- |
-| 1.0     | 23-01-2024 | - Initial creation of the Software Requirements Specification (SRS) for the Financial Trading Platform. |
-| 1.1     | 25-01-2024 | - Added index. <br> - Modified and streamlined the life cycle description in Section 5.6.2 of the SRS. <br> - Removed the Conclusion section for a more concise document structure. <br> - Updates are made to enhance clarity and align with the iterative nature of Agile development. |
+| 1.0     | 16-01-2024 | - Initial creation of the Software Requirements Specification (SRS) for the Financial Trading Platform. |
+| 1.1     | 24-01-2024 | - Added index. <br> - Modified and streamlined the life cycle description in Section 5.6.2 of the SRS. <br> - Removed the Conclusion section for a more concise document structure. <br> - Updates are made to enhance clarity and align with the iterative nature of Agile development. |
 
    
 ---

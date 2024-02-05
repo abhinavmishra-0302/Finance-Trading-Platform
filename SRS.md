@@ -80,7 +80,10 @@
 6. [Constraints](#6-constraints)
 7. [Assumptions and Dependencies](#7-assumptions-and-dependencies)
 8. [Decision Table and Decision Tree](#8-decision-table-and-decision-tree)
-9. [Updates](#9-updates)
+   - 8.1 Decision Table for User Interaction Flows
+   - 8.2 Decision Tree for User Interaction Flows
+
+10. [Updates](#9-updates)
 ---
 
 ## 1. Introduction
@@ -484,9 +487,9 @@ The following decision table outlines various user interaction flows based on sp
 10. **Invalid Username/Password:**
     - If the user is registered, has no pre-existing ID, signup is not applicable, login is not successful, the outcome is an invalid username/password.
 
-### Decision Tree for User Interaction Flows
+## 8.2 Decision Tree for User Interaction Flows
 
-#### User Interaction Decision Tree
+### User Interaction Decision Tree
 
 The decision tree visually represents the logic and outcomes of various user interactions within the Financial Trading Platform. The nodes and branches illustrate the conditions and actions leading to specific outcomes.
 

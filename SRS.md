@@ -76,7 +76,8 @@
 
 6. [Constraints](#6-constraints)
 7. [Assumptions and Dependencies](#7-assumptions-and-dependencies)
-8. [Updates](#8-updates)
+8. [Decision Table and Decision Tree](#8-decision-table-and-decision-tree)
+9. [Updates](#9-updates)
 ---
 
 ## 1. Introduction
@@ -425,7 +426,70 @@ The development life cycle of the Financial Trading Platform aligns with an Agil
 - **Data Availability:** Availability of real-time market data APIs for seamless integration.
 - **Internet Connectivity:** Users are assumed to have adequate internet connectivity for accessing the platform.
 
-## 8. Updates
+# 8. Decision Table and Decision Tree
+
+## 8.1 Decision Table for User Interaction Flows
+
+### User Interaction Decision Table
+
+The following decision table outlines various user interaction flows based on specific conditions and actions within the Financial Trading Platform:
+
+### Decision Table for User Interaction Flows
+
+| User Registered? | Pre-existing ID? | Signup Complete? | Login Successful? | Account Accessed? | Portfolio Viewed? | Stock Searched? | Payment Successful? | Buy/Sell? | Logout? | Outcome                                    |
+| ----------------- | ----------------- | ----------------- | ------------------ | ------------------ | ------------------- | ---------------- | --------------------- | --------- | ------- | ------------------------------------------- |
+| No                | Not Applicable    | No                | Not Applicable     | Not Applicable     | Not Applicable      | Not Applicable   | Not Applicable        | Not Applicable | Not Applicable | User needs to register                     |
+| No                | Not Applicable    | Yes               | Yes                | Yes                | No                  | No               | Not Applicable        | Not Applicable | Yes     | User logs out without viewing portfolio or searching stocks |
+| No                | Not Applicable    | Yes               | Yes                | Yes                | Yes                 | No               | Not Applicable        | Not Applicable | Yes     | User logs out after viewing portfolio      |
+| No                | Not Applicable    | Yes               | Yes                | Yes                | Yes                 | Yes              | Yes                   | Yes         | No      | User buys/sells stocks                     |
+| No                | Not Applicable    | Yes               | Yes                | Yes                | Yes                 | Yes              | Yes                   | No          | Yes     | User logs out after viewing stocks but without buying/selling |
+| Yes               | Yes               | Not Applicable    | Yes                | Yes                | No                  | No               | Not Applicable        | Not Applicable | Yes     | User logs out without viewing portfolio or searching stocks |
+| Yes               | Yes               | Not Applicable    | Yes                | Yes                | Yes                 | No               | Not Applicable        | Not Applicable | Yes     | User logs out after viewing portfolio      |
+| Yes               | Yes               | Not Applicable    | Yes                | Yes                | Yes                 | Yes              | Yes                   | Yes         | No      | User buys/sells stocks                     |
+| Yes               | Yes               | Not Applicable    | Yes                | Yes                | Yes                 | Yes              | Yes                   | No          | Yes     | User logs out after viewing stocks but without buying/selling |
+| Yes               | No                | Not Applicable    | No                 | Not Applicable     | Not Applicable      | Not Applicable   | Not Applicable        | Not Applicable | Not Applicable | Invalid Username/Password                  |
+
+#### Decision Table Logic:
+
+1. **User needs to register:**
+   - If the user is not registered, has no pre-existing ID, signup is not complete, and login is not successful, the outcome is that the user needs to register.
+
+2. **User logs out without viewing portfolio or searching stocks:**
+   - If the user is not registered, login is successful, and the user logs out without viewing the portfolio or searching stocks, the outcome is that the user logs out without engaging in portfolio or stock activities.
+
+3. **User logs out after viewing portfolio:**
+   - If the user is not registered, login is successful, the user views the portfolio, and then logs out, the outcome is that the user logs out after viewing the portfolio.
+
+4. **User buys/sells stocks:**
+   - If the user is not registered, login is successful, the user views the portfolio, searches stocks, payment is successful, and either buys or sells stocks, the outcome is that the user engages in buying/selling stocks.
+
+5. **User logs out after viewing stocks but without buying/selling:**
+   - If the user is not registered, login is successful, the user views the portfolio, searches stocks, payment is successful, and then logs out without buying/selling, the outcome is that the user logs out after viewing stocks but without engaging in buying/selling.
+
+6. **User logs out without viewing portfolio or searching stocks (Registered):**
+   - If the user is registered, has a pre-existing ID, signup is not applicable, login is successful, but the user logs out without viewing the portfolio or searching stocks, the outcome is that the user logs out without engaging in portfolio or stock activities.
+
+7. **User logs out after viewing portfolio (Registered):**
+   - If the user is registered, has a pre-existing ID, signup is not applicable, login is successful, the user views the portfolio, and then logs out, the outcome is that the user logs out after viewing the portfolio.
+
+8. **User buys/sells stocks (Registered):**
+   - If the user is registered, has a pre-existing ID, signup is not applicable, login is successful, the user views the portfolio, searches stocks, payment is successful, and either buys or sells stocks, the outcome is that the user engages in buying/selling stocks.
+
+9. **User logs out after viewing stocks but without buying/selling (Registered):**
+   - If the user is registered, has a pre-existing ID, signup is not applicable, login is successful, the user views the portfolio, searches stocks, payment is successful, and then logs out without buying/selling, the outcome is that the user logs out after viewing stocks but without engaging in buying/selling.
+
+10. **Invalid Username/Password:**
+    - If the user is registered, has no pre-existing ID, signup is not applicable, login is not successful, the outcome is an invalid username/password.
+
+### Decision Tree for User Interaction Flows
+
+#### User Interaction Decision Tree
+
+The decision tree visually represents the logic and outcomes of various user interactions within the Financial Trading Platform. The nodes and branches illustrate the conditions and actions leading to specific outcomes.
+
+![Decision Tree](Decision%20tree.png)
+
+## 9. Updates
 
 | Version | Date       | Updates |
 | ------- | ---------- | ------- |

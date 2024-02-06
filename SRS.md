@@ -432,11 +432,11 @@ The development life cycle of the Financial Trading Platform aligns with an Agil
 - **Data Availability:** Availability of real-time market data APIs for seamless integration.
 - **Internet Connectivity:** Users are assumed to have adequate internet connectivity for accessing the platform.
 
-# 8. Decision Table and Decision Tree
+## 8. Decision Table and Decision Tree
 
-## 8.1 Decision Table for User Interaction Flows
+### 8.1 Decision Table for User Interaction Flows
 
-### User Interaction Decision Table
+#### User Interaction Decision Table
 
 The following decision table outlines various user interaction flows based on specific conditions and actions within the Financial Trading Platform:
 
@@ -487,9 +487,9 @@ The following decision table outlines various user interaction flows based on sp
 10. **Invalid Username/Password:**
     - If the user is registered, has no pre-existing ID, signup is not applicable, login is not successful, the outcome is an invalid username/password.
 
-## 8.2 Decision Tree for User Interaction Flows
+### 8.2 Decision Tree for User Interaction Flows
 
-### User Interaction Decision Tree
+#### User Interaction Decision Tree
 
 The decision tree visually represents the logic and outcomes of various user interactions within the Financial Trading Platform. The nodes and branches illustrate the conditions and actions leading to specific outcomes.
 

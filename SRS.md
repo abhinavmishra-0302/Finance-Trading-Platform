@@ -82,7 +82,7 @@
 8. [Decision Table and Decision Tree](#8-decision-table-and-decision-tree)
    - 8.1 Decision Table for User Interaction Flows
    - 8.2 Decision Tree for User Interaction Flows
-9. [Data Flow Diagram (DFD)](#9-data-flow-diagram-(DFD))
+9. [Data Flow Diagram (DFD)](#9-data-flow-diagram-dfd)
 10. [Updates](#10-updates)
 ---
 
@@ -493,7 +493,7 @@ The following decision table outlines various user interaction flows based on sp
 
 The decision tree visually represents the logic and outcomes of various user interactions within the Financial Trading Platform. The nodes and branches illustrate the conditions and actions leading to specific outcomes.
 
-![Decision Tree](Decision%20tree.png)
+![Decision Tree](images/Decision%20tree.png)
 
 ## 9. Data Flow Diagram (DFD)
 
@@ -512,7 +512,8 @@ The Level 1 DFD depicts the flow of data and activities within the Financial Tra
 
 ### 9.2 Level 1 DFD Diagram
 
-![Level 1 DFD](DFD_Level1.png)
+![Level 1 DFD](images/DFD_part1.png)
+![Level 1 DFD](images/DFD_part2.png)
 
 #### Description of Components:
 1. **User Interaction (Process 1):** This process represents the main interaction flow between users and the Financial Trading Platform. It includes sub-processes for user registration, authentication, trading activities, portfolio management, and system administration.

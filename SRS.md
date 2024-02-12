@@ -82,8 +82,8 @@
 8. [Decision Table and Decision Tree](#8-decision-table-and-decision-tree)
    - 8.1 Decision Table for User Interaction Flows
    - 8.2 Decision Tree for User Interaction Flows
-
-10. [Updates](#9-updates)
+9. [Data Flow Diagram (DFD)](#9-data-flow-diagram-(DFD))
+10. [Updates](#10-updates)
 ---
 
 ## 1. Introduction
@@ -495,7 +495,43 @@ The decision tree visually represents the logic and outcomes of various user int
 
 ![Decision Tree](Decision%20tree.png)
 
-## 9. Updates
+## 9. Data Flow Diagram (DFD)
+
+### 9.1 Level 1 Data Flow Diagram
+
+The Level 1 Data Flow Diagram (DFD) provides an overview of the main processes and data flows within the Financial Trading Platform. It illustrates the interactions between external entities, processes, and data stores at a high level of abstraction.
+
+#### Overview:
+The Level 1 DFD depicts the flow of data and activities within the Financial Trading Platform at a macro level, focusing on key processes and their interactions. It provides a structured representation of the system's functionality, serving as a foundation for understanding the system's behavior and identifying potential areas for optimization and improvement.
+
+#### Explanation:
+- **User Interaction (Process 1):** This main process encapsulates the overall interaction between users and the Financial Trading Platform. It encompasses activities such as user registration, login, trading, portfolio management, and system administration.
+- **External Entities (Entities 1-5):** External entities represent the sources or destinations of data within the system. They include users, the trading platform, market data providers, and external services.
+- **Processes (Processes 1.1-5.2):** These processes represent the various actions and tasks performed within the system. They include user authentication, trading execution, portfolio management, data analysis, and order processing.
+- **Data Stores (Data Stores 1-2):** Data stores represent repositories of information within the system. They include databases, caches, and storage systems used for storing user data, market data, and system configurations.
+
+### 9.2 Level 1 DFD Diagram
+
+![Level 1 DFD](DFD_Level1.png)
+
+#### Description of Components:
+1. **User Interaction (Process 1):** This process represents the main interaction flow between users and the Financial Trading Platform. It includes sub-processes for user registration, authentication, trading activities, portfolio management, and system administration.
+2. **External Entities:**
+   - **User (Entity 1):** Represents individual users interacting with the platform.
+   - **Trading Platform (Entity 2):** Represents the core platform providing trading and portfolio management services.
+   - **Market Data Provider (Entity 3):** Represents external sources providing real-time market data to the platform.
+   - **External Services (Entities 4-5):** Represent additional external services integrated with the platform, such as payment gateways or regulatory authorities.
+3. **Processes:**
+   - **User Authentication (Process 1.1):** Handles user registration, login, and authentication processes.
+   - **Trading Execution (Process 1.2):** Manages the execution of buy and sell orders placed by users.
+   - **Portfolio Management (Process 1.3):** Facilitates the management and analysis of user investment portfolios.
+   - **Data Analysis (Process 1.4):** Performs analysis on market trends, user data, and trading patterns.
+   - **Order Processing (Process 1.5):** Handles the processing and confirmation of buy and sell orders.
+
+### Explanation of Level-1 DFD:
+The Level 1 DFD serves as an abstraction of the system's functionality, focusing on the high-level processes and interactions between users, the platform, and external entities. It follows the principles of decomposition by breaking down the main process into smaller, more manageable sub-processes. Additionally, each component is assigned a unique identifier following the numbering rules, ensuring clarity and consistency in the diagram.
+
+## 10. Updates
 
 | Version | Date       | Updates |
 | ------- | ---------- | ------- |

@@ -512,6 +512,7 @@ The Level 1 DFD depicts the flow of data and activities within the Financial Tra
 
 ### 9.2 Level 1 DFD Diagram
 
+![Level 1 DFD](images/DFD_part0.png)
 ![Level 1 DFD](images/DFD_part1.png)
 ![Level 1 DFD](images/DFD_part2.png)
 

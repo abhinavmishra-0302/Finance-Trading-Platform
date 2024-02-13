@@ -528,13 +528,6 @@ The Level 2 DFD expands upon the processes identified in the Level 1 DFD, breaki
 - **Options (Process 4):** Provides options for managing stocks, including adding them to inventory, buying/selling, and confirming orders.
 - **Order Details (Process 5):** Manages the details of orders placed, including proceeding to checkout, selecting payment methods, and confirming orders.
 
-#### Description of Components:
-1. **User Details/Login Choice/Login/Signup (Process 1):** Manages user authentication and registration processes.
-2. **Stock Details (Process 2):** Handles the selection and analysis of stocks.
-3. **Analysis (Process 3):** Analyzes selected stocks using models and indicators.
-4. **Options (Process 4):** Provides options for managing stocks, including buying/selling and order confirmation.
-5. **Order Details (Process 5):** Manages the details of orders placed, including payment and confirmation.
-
 ### Explanation of Level-2 DFD:
 The Level 2 DFD provides a more detailed view of the processes identified in the Level 1 DFD, breaking them down into smaller, more manageable sub-processes. Each component is assigned a unique identifier and described in detail, enhancing clarity and understanding of the system's functionality.
 ## 10. Updates

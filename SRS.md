@@ -510,29 +510,32 @@ The Level 1 DFD depicts the flow of data and activities within the Financial Tra
 - **Processes (Processes 1.1-5.2):** These processes represent the various actions and tasks performed within the system. They include user authentication, trading execution, portfolio management, data analysis, and order processing.
 - **Data Stores (Data Stores 1-2):** Data stores represent repositories of information within the system. They include databases, caches, and storage systems used for storing user data, market data, and system configurations.
 
-### 9.2 Level 1 DFD Diagram
+### 9.2 Level 2 DFD Diagram
+The Level 2 Data Flow Diagram (DFD) delves deeper into the processes identified in the Level 1 DFD, providing a more detailed view of the system's functionality and interactions.
+
+#### Overview:
+The Level 2 DFD expands upon the processes identified in the Level 1 DFD, breaking them down into finer-grained sub-processes and data flows. It offers a more detailed understanding of how data moves within the system and how individual processes contribute to the overall functionality of the Financial Trading Platform.
 
 ![Level 1 DFD](images/DFD_part0.png)
-![Level 1 DFD](images/DFD_part1.png)
-![Level 1 DFD](images/DFD_part2.png)
+![Level 2 DFD](images/DFD_part1.png)
+![Level 2 DFD](images/DFD_part2.png)
+
+#### Explanation:
+- **User Details/Login Choice/Login/Signup (Process 1):** This process manages the user's decision to either log in or sign up, including the validation of login credentials and the entry of signup details.
+- **Stock Details (Process 2):** Handles the selection and analysis of stocks, predicting future trends and analyzing indicators.
+- **Analysis (Process 3):** Analyzes the selected stock using models and indicators, predicts its movement, and presents the results within a specified time frame.
+- **Options (Process 4):** Provides options for managing stocks, including adding them to inventory, buying/selling, and confirming orders.
+- **Order Details (Process 5):** Manages the details of orders placed, including proceeding to checkout, selecting payment methods, and confirming orders.
 
 #### Description of Components:
-1. **User Interaction (Process 1):** This process represents the main interaction flow between users and the Financial Trading Platform. It includes sub-processes for user registration, authentication, trading activities, portfolio management, and system administration.
-2. **External Entities:**
-   - **User (Entity 1):** Represents individual users interacting with the platform.
-   - **Trading Platform (Entity 2):** Represents the core platform providing trading and portfolio management services.
-   - **Market Data Provider (Entity 3):** Represents external sources providing real-time market data to the platform.
-   - **External Services (Entities 4-5):** Represent additional external services integrated with the platform, such as payment gateways or regulatory authorities.
-3. **Processes:**
-   - **User Authentication (Process 1.1):** Handles user registration, login, and authentication processes.
-   - **Trading Execution (Process 1.2):** Manages the execution of buy and sell orders placed by users.
-   - **Portfolio Management (Process 1.3):** Facilitates the management and analysis of user investment portfolios.
-   - **Data Analysis (Process 1.4):** Performs analysis on market trends, user data, and trading patterns.
-   - **Order Processing (Process 1.5):** Handles the processing and confirmation of buy and sell orders.
+1. **User Details/Login Choice/Login/Signup (Process 1):** Manages user authentication and registration processes.
+2. **Stock Details (Process 2):** Handles the selection and analysis of stocks.
+3. **Analysis (Process 3):** Analyzes selected stocks using models and indicators.
+4. **Options (Process 4):** Provides options for managing stocks, including buying/selling and order confirmation.
+5. **Order Details (Process 5):** Manages the details of orders placed, including payment and confirmation.
 
-### Explanation of Level-1 DFD:
-The Level 1 DFD serves as an abstraction of the system's functionality, focusing on the high-level processes and interactions between users, the platform, and external entities. It follows the principles of decomposition by breaking down the main process into smaller, more manageable sub-processes. Additionally, each component is assigned a unique identifier following the numbering rules, ensuring clarity and consistency in the diagram.
-
+### Explanation of Level-2 DFD:
+The Level 2 DFD provides a more detailed view of the processes identified in the Level 1 DFD, breaking them down into smaller, more manageable sub-processes. Each component is assigned a unique identifier and described in detail, enhancing clarity and understanding of the system's functionality.
 ## 10. Updates
 
 | Version | Date       | Updates |

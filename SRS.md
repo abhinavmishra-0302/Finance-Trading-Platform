@@ -504,6 +504,8 @@ The Level 1 Data Flow Diagram (DFD) provides an overview of the main processes a
 #### Overview:
 The Level 1 DFD depicts the flow of data and activities within the Financial Trading Platform at a macro level, focusing on key processes and their interactions. It provides a structured representation of the system's functionality, serving as a foundation for understanding the system's behavior and identifying potential areas for optimization and improvement.
 
+![Level 1 DFD](images/DFD_part0.png)
+
 #### Explanation:
 - **User Interaction (Process 1):** This main process encapsulates the overall interaction between users and the Financial Trading Platform. It encompasses activities such as user registration, login, trading, portfolio management, and system administration.
 - **External Entities (Entities 1-5):** External entities represent the sources or destinations of data within the system. They include users, the trading platform, market data providers, and external services.
@@ -516,7 +518,6 @@ The Level 2 Data Flow Diagram (DFD) delves deeper into the processes identified 
 #### Overview:
 The Level 2 DFD expands upon the processes identified in the Level 1 DFD, breaking them down into finer-grained sub-processes and data flows. It offers a more detailed understanding of how data moves within the system and how individual processes contribute to the overall functionality of the Financial Trading Platform.
 
-![Level 1 DFD](images/DFD_part0.png)
 ![Level 2 DFD](images/DFD_part1.png)
 ![Level 2 DFD](images/DFD_part2.png)
 

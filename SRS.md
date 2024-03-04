@@ -535,6 +535,7 @@ The Level 2 DFD provides a more detailed view of the processes identified in the
 ## 10. Structure Chart
 
 The Structure Chart provides a hierarchical visualization of the modules and their interrelationships within the Financial Trading Platform. It illustrates the organization of the software components and their interactions, offering a systematic representation of the system's architecture.
+
 ![structure chart](images/structure_chart.png)
 
 ## 11. Updates

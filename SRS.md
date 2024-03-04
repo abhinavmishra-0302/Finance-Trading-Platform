@@ -129,7 +129,7 @@ The Financial Trading Platform is a web-based application developed to facilitat
 
 #### 2.2.4 Data Analysis and Predictive Analytics
 
-- **Objective:** Provide users with tools for in-depth data analysis and predictive modeling.
+- **Objective:** Provide users with tools for in-depth data analysis and predictive modelling.
 - **Features:**
   - Market trends analysis.
   - Predictive analytics using machine learning models.
@@ -247,7 +247,7 @@ The Financial Trading Platform is a web-based application developed to facilitat
 
 - **Requirements:**
   - Administrative tools for configuring system parameters.
-  - Settings for customization based on user preferences.
+  - Customization settings based on user preferences.
 
 #### 3.5.2 Security Measures
 
@@ -274,7 +274,7 @@ The Financial Trading Platform is a web-based application developed to facilitat
 #### 4.1.2 Low Latency Execution of Trades
 
 - **Requirements:**
-  - Trading engine should execute orders with low latency.
+  - The trading engine should execute orders with low latency.
   - Immediate response to user-initiated trades.
 
 ### 4.2 Security
@@ -523,7 +523,7 @@ The Level 2 DFD expands upon the processes identified in the Level 1 DFD, breaki
 ![Level 2 DFD](images/DFD_part2.png)
 
 #### Explanation:
-- **User Details/Login Choice/Login/Signup (Process 1):** This process manages the user's decision to either log in or sign up, including the validation of login credentials and the entry of signup details.
+- **User Details/Login Choice/Login/Signup (Process 1):** This process manages the user's decision to either login or sign up, including the validation of login credentials and the entry of signup details.
 - **Stock Details (Process 2):** Handles the selection and analysis of stocks, predicting future trends and analyzing indicators.
 - **Analysis (Process 3):** Analyzes the selected stock using models and indicators, predicts its movement, and presents the results within a specified time frame.
 - **Options (Process 4):** Provides options for managing stocks, including adding them to inventory, buying/selling, and confirming orders.
@@ -535,6 +535,7 @@ The Level 2 DFD provides a more detailed view of the processes identified in the
 ## 10. Structure Chart
 
 The Structure Chart provides a hierarchical visualization of the modules and their interrelationships within the Financial Trading Platform. It illustrates the organization of the software components and their interactions, offering a systematic representation of the system's architecture.
+![structure chart](images/structure_chart.png)
 
 ## 11. Updates
 

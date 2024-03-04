@@ -83,7 +83,8 @@
    - 8.1 Decision Table for User Interaction Flows
    - 8.2 Decision Tree for User Interaction Flows
 9. [Data Flow Diagram (DFD)](#9-data-flow-diagram-dfd)
-10. [Updates](#10-updates)
+10. [Structure Chart](#10-structure-chart)
+11. [Updates](#11-updates)
 ---
 
 ## 1. Introduction
@@ -485,7 +486,7 @@ The following decision table outlines various user interaction flows based on sp
    - If the user is registered, has a pre-existing ID, signup is not applicable, login is successful, the user views the portfolio, searches stocks, payment is successful, and then logs out without buying/selling, the outcome is that the user logs out after viewing stocks but without engaging in buying/selling.
 
 10. **Invalid Username/Password:**
-    - If the user is registered, has no pre-existing ID, signup is not applicable, login is not successful, the outcome is an invalid username/password.
+    - If the user is registered, has no pre-existing ID, signup is not applicable, login is not successful, and the outcome is an invalid username/password.
 
 ### 8.2 Decision Tree for User Interaction Flows
 
@@ -502,7 +503,7 @@ The decision tree visually represents the logic and outcomes of various user int
 The Level 1 Data Flow Diagram (DFD) provides an overview of the main processes and data flows within the Financial Trading Platform. It illustrates the interactions between external entities, processes, and data stores at a high level of abstraction.
 
 #### Overview:
-The Level 1 DFD depicts the flow of data and activities within the Financial Trading Platform at a macro level, focusing on key processes and their interactions. It provides a structured representation of the system's functionality, serving as a foundation for understanding the system's behavior and identifying potential areas for optimization and improvement.
+The Level 1 DFD depicts the flow of data and activities within the Financial Trading Platform at a macro level, focusing on key processes and their interactions. It provides a structured representation of the system's functionality, serving as a foundation for understanding the system's behaviour and identifying potential areas for optimization and improvement.
 
 ![Level 1 DFD](images/DFD_part0.png)
 
@@ -530,7 +531,12 @@ The Level 2 DFD expands upon the processes identified in the Level 1 DFD, breaki
 
 ### Explanation of Level-2 DFD:
 The Level 2 DFD provides a more detailed view of the processes identified in the Level 1 DFD, breaking them down into smaller, more manageable sub-processes. Each component is assigned a unique identifier and described in detail, enhancing clarity and understanding of the system's functionality.
-## 10. Updates
+
+## 10. Structure Chart
+
+The Structure Chart provides a hierarchical visualization of the modules and their interrelationships within the Financial Trading Platform. It illustrates the organization of the software components and their interactions, offering a systematic representation of the system's architecture.
+
+## 11. Updates
 
 | Version | Date       | Updates |
 | ------- | ---------- | ------- |

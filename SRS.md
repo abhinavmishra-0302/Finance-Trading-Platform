@@ -540,6 +540,7 @@ The Structure Chart provides a hierarchical visualization of the modules and the
 ![structure chart](images/structure_chart.png)
 
 ## 11. Use Case UML
+
 The Use Case Unified Modeling Language (UML) diagrams provide a visual representation of the interactions between actors (users or external systems) and the Financial Trading Platform. These diagrams illustrate various scenarios of how users interact with the system to achieve specific goals or tasks.
 
 ![use_case_uml](images/use_case_uml.png)

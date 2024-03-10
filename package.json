@@ -1,0 +1,26 @@
+{
+  "name": "finance-trading-platform",
+  "version": "1.0.0",
+  "description": "Design and implement a comprehensive financial trading platform that facilitates trading, portfolio management, and data analysis for investors. The platform integrates real-time market data, advanced trading algorithms, and a user-friendly interface.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhinavmishra-0302/Finance-Trading-Platform.git"
+  },
+  "author": "Abhinav Mishra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abhinavmishra-0302/Finance-Trading-Platform/issues"
+  },
+  "homepage": "https://github.com/abhinavmishra-0302/Finance-Trading-Platform#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.3",
+    "express-session": "^1.18.0",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0"
+  }
+}

@@ -84,7 +84,7 @@
    - 8.2 Decision Tree for User Interaction Flows
 9. [Data Flow Diagram (DFD)](#9-data-flow-diagram-dfd)
 10. [Structure Chart](#10-structure-chart)
-11. [Use Case UML](#-use-case-uml)
+11. [Use Case UML](#11-use-case-uml)
 12. [Updates](#12-updates)
 ---
 

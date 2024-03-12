@@ -84,7 +84,8 @@
    - 8.2 Decision Tree for User Interaction Flows
 9. [Data Flow Diagram (DFD)](#9-data-flow-diagram-dfd)
 10. [Structure Chart](#10-structure-chart)
-11. [Updates](#11-updates)
+11. [Use Case UML](#11-use-case-uml)
+12. [Updates](#12-updates)
 ---
 
 ## 1. Introduction
@@ -538,7 +539,13 @@ The Structure Chart provides a hierarchical visualization of the modules and the
 
 ![structure chart](images/structure_chart.png)
 
-## 11. Updates
+## 11. Use Case UML
+
+The Use Case Unified Modeling Language (UML) diagrams provide a visual representation of the interactions between actors (users or external systems) and the Financial Trading Platform. These diagrams illustrate various scenarios of how users interact with the system to achieve specific goals or tasks.
+
+![use_case_uml](images/use_case_uml.png)
+
+## 12. Updates
 
 | Version | Date       | Updates |
 | ------- | ---------- | ------- |

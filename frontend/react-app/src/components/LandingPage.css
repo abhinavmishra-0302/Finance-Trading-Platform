@@ -1,0 +1,169 @@
+/* src/LandingPage.css */
+
+.catchy-phrase {
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: 85%;
+}
+
+.catchy-phrase h1 {
+    font-size: 50px;
+    margin: 10px 0;
+    color: #333;
+    font-family: 'Arial Black', sans-serif;
+    /* Change font family to a bold sans-serif font */
+}
+
+/* Add animation to the catchy phrase */
+.catchy-phrase h1 {
+    animation-name: slideIn;
+    animation-duration: 1s;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+}
+
+.big-image {
+    margin-top: 0px;
+    max-width: 80%;
+    text-align: center;
+}
+
+.big-image img {
+    max-width: 50%;
+}
+
+.logo-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+}
+
+.button-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.btn {
+    font-size: 16px;
+    padding: 10px 20px;
+}
+
+.additional-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+}
+
+.text {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.text h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.text p {
+    font-size: 20px;
+    color: #666;
+}
+
+.image {
+    flex: 1;
+    text-align: center;
+}
+
+.image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.additional-text {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.additional-text h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.additional-text p {
+    font-size: 20px;
+    color: #666;
+}
+
+.additional-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    /* Adjust margin as needed */
+    margin-bottom: 50px;
+    /* Add margin between content blocks */
+}
+
+/* Additional content block styles */
+
+.additional-content .text {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.additional-content .text h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.additional-content .text p {
+    font-size: 20px;
+    color: #666;
+}
+
+.additional-content .image {
+    flex: 1;
+    text-align: center;
+}
+
+.additional-content .image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}

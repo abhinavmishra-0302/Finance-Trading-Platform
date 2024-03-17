@@ -1,4 +1,4 @@
-// modules/auth.js
+// modules/authentication.js
 
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;

@@ -1,5 +1,6 @@
 const express = require('express');
 const mysql = require('mysql');
+const bcrypt = require('bcrypt');
 
 const router = express.Router();
 
@@ -21,20 +22,28 @@ connection.connect((err) => {
 });
 
 // Sign-up API endpoint
-router.post('/signup', (req, res) => {
+router.post('/signup', async (req, res) => {
     const { username, email, password } = req.body;
 
-    // Insert user details into the database
-    const sql = 'INSERT INTO users (username, email, password) VALUES (?, ?, ?)';
-    connection.query(sql, [username, email, password], (err, result) => {
-        if (err) {
-            console.error('Error signing up:', err);
-            res.status(500).json({ error: 'Failed to sign up' });
-            return;
-        }
-        console.log('User signed up successfully');
-        res.status(201).json({ message: 'User signed up successfully' });
-    });
+    try {
+        // Hash the password
+        const hashedPassword = await bcrypt.hash(password, 10); // Use bcrypt to hash the password with a salt round of 10
+
+        // Insert user details into the database with the hashed password
+        const sql = 'INSERT INTO users (username, email, password) VALUES (?, ?, ?)';
+        connection.query(sql, [username, email, hashedPassword], (err, result) => {
+            if (err) {
+                console.error('Error signing up:', err);
+                res.status(500).json({ error: 'Failed to sign up' });
+                return;
+            }
+            console.log('User signed up successfully');
+            res.status(201).json({ message: 'User signed up successfully' });
+        });
+    } catch (error) {
+        console.error('Error signing up:', error);
+        res.status(500).json({ error: 'Failed to sign up' });
+    }
 });
 
 module.exports = router;

@@ -24,17 +24,61 @@ const GetStartedPage: React.FC = () => {
         setConfirmPassword(e.target.value);
     };
 
-    const handleGetStarted = () => {
+    const handleGetStarted = async () => {
         if (isExistingUser) {
             // Handle login logic
             console.log('Email entered:', email);
             console.log('Password entered:', password);
+
+            try {
+                const response = await fetch('http://localhost:3000/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email, password })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log('Login successful:', data);
+                    // Optionally, you can redirect the user to another page or perform other actions upon successful login
+                } else {
+                    const errorData = await response.json();
+                    console.error('Error logging in:', errorData);
+                }
+            } catch (error) {
+                console.error('Error logging in:', error);
+            }
         } else {
             // Handle signup logic
             console.log('Name entered:', name);
             console.log('Email entered:', email);
             console.log('Password entered:', password);
             console.log('Confirm Password entered:', confirmPassword);
+
+            try {
+                const response = await fetch('http://localhost:3000/signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({username: name, email, password})
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log('Sign-up successful:', data);
+                    // Optionally, you can redirect the user to another page or show a success message
+                } else {
+                    const errorData = await response.json();
+                    console.error('Error signing up:', errorData);
+                    // Optionally, you can display an error message to the user
+                }
+            } catch (error) {
+                console.error('Error signing up:', error);
+                // Handle network errors or other exceptions
+            }
         }
     };
 

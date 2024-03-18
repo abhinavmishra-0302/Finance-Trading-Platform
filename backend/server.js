@@ -30,10 +30,6 @@ app.use(signupApi);
 // Login route
 app.use(loginApi);
 
-app.get('/login-fail', (req, res) => {
-    res.status(401).send('Login failed!');
-});
-
 // Start server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

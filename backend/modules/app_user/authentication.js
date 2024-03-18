@@ -1,6 +1,7 @@
 const express = require('express');
 const mysql = require('mysql');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 const router = express.Router();
 
@@ -46,8 +47,13 @@ router.post('/login', async (req, res) => {
             // Compare the hashed password stored in the database with the hashed version of the provided password
             const passwordMatch = await bcrypt.compare(password, user.password);
             if (passwordMatch) {
-                // Passwords match, login successful
-                res.status(200).json({ message: 'Login successful' });
+                // Passwords match, generate JWT
+                const token = jwt.sign({ userId: user.id, email: user.email }, 'your_secret_key', { expiresIn: '1h' });
+
+                console.log(token)
+
+                // Send the JWT as a response
+                res.status(200).json({ token });
             } else {
                 // Passwords don't match
                 res.status(401).json({ error: 'Invalid credentials' });

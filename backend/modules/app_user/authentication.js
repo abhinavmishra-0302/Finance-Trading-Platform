@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { MongoClient, ServerApiVersion} = require('mongodb');
 const mongoose = require('mongoose')
-const User = require('../model/users_model')
+const User = require('../../model/users_model')
 
 const router = express.Router();
 

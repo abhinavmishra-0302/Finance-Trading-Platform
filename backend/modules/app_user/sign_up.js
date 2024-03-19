@@ -1,7 +1,7 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
 const { MongoClient, ServerApiVersion} = require('mongodb');
-const User = require('../model/users_model')
+const User = require('../../model/users_model')
 
 const router = express.Router();
 

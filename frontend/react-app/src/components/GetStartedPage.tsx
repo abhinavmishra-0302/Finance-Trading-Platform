@@ -63,7 +63,7 @@ const GetStartedPage: React.FC = () => {
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({username: name, email, password})
+                    body: JSON.stringify({name, email, password})
                 });
 
                 if (response.ok) {

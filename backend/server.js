@@ -22,13 +22,26 @@ app.use(session({
     saveUninitialized: false
 }));
 
+
 app.use(cors());
 app.use(express.json());
 
+
+//Signup route
 app.use(signupApi);
 
 // Login route
 app.use(loginApi);
+
+const usersApi = require('./modules/app_user/get_all_users');
+const {connect} = require("mongoose");
+
+connect(
+    'mongodb+srv://abhinav_stocker:abhinav321@atlascluster.icr73gp.mongodb.net/?retryWrites=true&w=majority&appName=AtlasCluster'
+    )
+    .then(() => console.log("Database connected!"));
+
+app.use('/users', usersApi);
 
 // Start server
 const PORT = process.env.PORT || 3000;

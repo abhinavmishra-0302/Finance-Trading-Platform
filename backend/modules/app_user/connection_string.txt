@@ -1,0 +1,1 @@
+mongodb+srv://abhinav_stocker:abhinav321@atlascluster.icr73gp.mongodb.net/?retryWrites=true&w=majority&appName=AtlasCluster

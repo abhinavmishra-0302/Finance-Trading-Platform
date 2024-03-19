@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 
 // Add express-session middleware
 app.use(session({
-    secret: 'secret_key_to_be_changed_in_production', // TODO: Change this to a long, random string in production
+    secret: EXPRESS_SESSION_KEY,
     resave: false,
     saveUninitialized: false
 }));
@@ -37,7 +37,7 @@ const usersApi = require('./modules/app_user/get_all_users');
 const {connect} = require("mongoose");
 
 connect(
-    'mongodb+srv://abhinav_stocker:abhinav321@atlascluster.icr73gp.mongodb.net/?retryWrites=true&w=majority&appName=AtlasCluster'
+    MONGO_CONNECTION_STRING
     )
     .then(() => console.log("Database connected!"));
 

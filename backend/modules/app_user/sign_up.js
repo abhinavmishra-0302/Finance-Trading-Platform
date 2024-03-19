@@ -6,7 +6,7 @@ const User = require('../../model/users_model')
 const router = express.Router();
 
 // MongoDB database name
-const dbName = 'stocker';
+const dbName = DB_NAME;
 
 // Sign-up API endpoint
 router.post('/signup', async (req, res) => {

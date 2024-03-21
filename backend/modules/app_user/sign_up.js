@@ -2,19 +2,18 @@ const express = require('express');
 const bcrypt = require('bcrypt');
 const { MongoClient, ServerApiVersion} = require('mongodb');
 const User = require('../../model/users_model')
+// const {DB_NAME} = require("../../config/config");
 
 const router = express.Router();
 
 // MongoDB database name
-const dbName = DB_NAME;
+// const dbName = DB_NAME;
 
 // Sign-up API endpoint
 router.post('/signup', async (req, res) => {
     const { name, email, password } = req.body;
 
     try {
-
-
         // Check if user already exists
         const existingUser = await User.findOne({ email });
         if (existingUser) {

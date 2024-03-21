@@ -15,6 +15,8 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+const {MONGO_CONNECTION_STRING, EXPRESS_SESSION_KEY} = require("./config/config");
+
 // Add express-session middleware
 app.use(session({
     secret: EXPRESS_SESSION_KEY,
@@ -35,6 +37,7 @@ app.use(loginApi);
 
 const usersApi = require('./modules/app_user/get_all_users');
 const {connect} = require("mongoose");
+
 
 connect(
     MONGO_CONNECTION_STRING

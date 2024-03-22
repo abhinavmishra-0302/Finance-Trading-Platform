@@ -86,7 +86,8 @@
 10. [Structure Chart](#10-structure-chart)
 11. [Use Case UML](#11-use-case-uml)
 12. [Sequence Diagram](#12-sequence-diagram)
-13. [Updates](#13-updates)
+13. [Collaboration Diagram](#13-collaboration-diagram)
+14. [Updates](#14-updates)
 ---
 
 ## 1. Introduction
@@ -552,7 +553,13 @@ The Sequence Diagram depicts the interactions between different components and a
 
 ![sequence_diagram](images/sequence_diagram.png)
 
-## 13. Updates
+## 13. Collaboration Diagram
+
+The Collaboration Diagram illustrates the interactions between objects within the Financial Trading Platform. It shows how objects collaborate to achieve specific tasks or functionalities, providing a detailed view of the relationships and interactions between different components.
+
+![collaboration_diagram](images/collaboration_diagram.png)
+
+## 14. Updates
 
 | Version | Date       | Updates |
 | ------- | ---------- | ------- |

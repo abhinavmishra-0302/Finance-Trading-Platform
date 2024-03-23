@@ -85,7 +85,9 @@
 9. [Data Flow Diagram (DFD)](#9-data-flow-diagram-dfd)
 10. [Structure Chart](#10-structure-chart)
 11. [Use Case UML](#11-use-case-uml)
-12. [Updates](#12-updates)
+12. [Sequence Diagram](#12-sequence-diagram)
+13. [Collaboration Diagram](#13-collaboration-diagram)
+14. [Updates](#14-updates)
 ---
 
 ## 1. Introduction
@@ -545,7 +547,19 @@ The Use Case Unified Modeling Language (UML) diagrams provide a visual represent
 
 ![use_case_uml](images/use_case_uml.png)
 
-## 12. Updates
+## 12. Sequence Diagram
+
+The Sequence Diagram depicts the interactions between different components and actors within the Financial Trading Platform. It illustrates the sequence of messages and actions that occur during specific user interactions, providing a detailed view of the system's behaviour.
+
+![sequence_diagram](images/sequence_diagram.png)
+
+## 13. Collaboration Diagram
+
+The Collaboration Diagram illustrates the interactions between objects within the Financial Trading Platform. It shows how objects collaborate to achieve specific tasks or functionalities, providing a detailed view of the relationships and interactions between different components.
+
+![collaboration_diagram](images/collaboration_diagram.png)
+
+## 14. Updates
 
 | Version | Date       | Updates |
 | ------- | ---------- | ------- |

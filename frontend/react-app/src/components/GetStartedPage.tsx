@@ -26,7 +26,7 @@ const GetStartedPage: React.FC = () => {
     const handleConfirmPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setConfirmPassword(e.target.value);
     };
-    // ............................................................for the time being we are not using the backend so we are commenting the below code
+
     const handleGetStarted = async () => {
         if (isExistingUser) {
             // Handle login logic

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './GetStartedPage.css'; // Import custom CSS file for styling
 
 const GetStartedPage: React.FC = () => {
@@ -7,6 +8,8 @@ const GetStartedPage: React.FC = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [isExistingUser, setIsExistingUser] = useState(false);
+
+    const navigate = useNavigate(); // Initialize useNavigate
 
     const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setEmail(e.target.value);
@@ -30,32 +33,32 @@ const GetStartedPage: React.FC = () => {
             console.log('Email entered:', email);
             console.log('Password entered:', password);
 
-            try {
-                const response = await fetch('http://localhost:3000/login', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ email, password })
-                });
+                try {
+                    const response = await fetch('http://localhost:3000/login', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ email, password })
+                    });
 
-                if (response.ok) {
-                    const data = await response.json();
-                    console.log('Login successful:', data);
-                    // Optionally, you can redirect the user to another page or perform other actions upon successful login
-                } else {
-                    const errorData = await response.json();
-                    console.error('Error logging in:', errorData);
+                    if (response.ok) {
+                        const data = await response.json();
+                        console.log('Login successful:', data);
+                        navigate('/dashboard'); // Navigate to Dashboard upon successful login
+                    } else {
+                        const errorData = await response.json();
+                        console.error('Error logging in:', errorData);
+                    }
+                } catch (error) {
+                    console.error('Error logging in:', error);
                 }
-            } catch (error) {
-                console.error('Error logging in:', error);
-            }
-        } else {
-            // Handle signup logic
-            console.log('Name entered:', name);
-            console.log('Email entered:', email);
-            console.log('Password entered:', password);
-            console.log('Confirm Password entered:', confirmPassword);
+            } else {
+                // Handle signup logic
+                console.log('Name entered:', name);
+                console.log('Email entered:', email);
+                console.log('Password entered:', password);
+                console.log('Confirm Password entered:', confirmPassword);
 
             try {
                 const response = await fetch('http://localhost:3000/signup', {
@@ -66,20 +69,20 @@ const GetStartedPage: React.FC = () => {
                     body: JSON.stringify({name, email, password})
                 });
 
-                if (response.ok) {
-                    const data = await response.json();
-                    console.log('Sign-up successful:', data);
-                    // Optionally, you can redirect the user to another page or show a success message
-                } else {
-                    const errorData = await response.json();
-                    console.error('Error signing up:', errorData);
-                    // Optionally, you can display an error message to the user
+                    if (response.ok) {
+                        const data = await response.json();
+                        console.log('Sign-up successful:', data);
+                        // Optionally, you can redirect the user to another page or show a success message
+                    } else {
+                        const errorData = await response.json();
+                        console.error('Error signing up:', errorData);
+                        // Optionally, you can display an error message to the user
+                    }
+                } catch (error) {
+                    console.error('Error signing up:', error);
+                    // Handle network errors or other exceptions
                 }
-            } catch (error) {
-                console.error('Error signing up:', error);
-                // Handle network errors or other exceptions
             }
-        }
     };
 
     const toggleExistingUser = () => {

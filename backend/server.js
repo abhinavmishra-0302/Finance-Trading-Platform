@@ -17,18 +17,31 @@ app.use(bodyParser.json());
 
 // Add express-session middleware
 app.use(session({
-    secret: 'secret_key_to_be_changed_in_production', // TODO: Change this to a long, random string in production
+    secret: EXPRESS_SESSION_KEY,
     resave: false,
     saveUninitialized: false
 }));
 
+
 app.use(cors());
 app.use(express.json());
 
+
+//Signup route
 app.use(signupApi);
 
 // Login route
 app.use(loginApi);
+
+const usersApi = require('./modules/app_user/get_all_users');
+const {connect} = require("mongoose");
+
+connect(
+    MONGO_CONNECTION_STRING
+    )
+    .then(() => console.log("Database connected!"));
+
+app.use('/users', usersApi);
 
 // Start server
 const PORT = process.env.PORT || 3000;

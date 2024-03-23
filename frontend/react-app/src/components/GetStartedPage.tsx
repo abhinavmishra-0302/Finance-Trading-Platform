@@ -60,14 +60,14 @@ const GetStartedPage: React.FC = () => {
                 console.log('Password entered:', password);
                 console.log('Confirm Password entered:', confirmPassword);
 
-                try {
-                    const response = await fetch('http://localhost:3000/signup', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({ username: name, email, password })
-                    });
+            try {
+                const response = await fetch('http://localhost:3000/signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({name, email, password})
+                });
 
                     if (response.ok) {
                         const data = await response.json();

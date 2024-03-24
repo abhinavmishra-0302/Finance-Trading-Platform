@@ -1,15 +1,10 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const { MongoClient, ServerApiVersion} = require('mongodb');
-const mongoose = require('mongoose')
 const User = require('../../model/users_model')
-const {JWT_SECRET_KEY, JWT_VALID_TIME} = require("../../config/config");
+const {JWT_SECRET_KEY, JWT_VALID_TIME, COOKIE_EXPIRY} = require("../../config/config");
 
 const router = express.Router();
-
-// MongoDB database name
-const dbName = 'stocker';
 
 // Login API endpoint
 router.post('/login', async (req, res) => {
@@ -31,7 +26,9 @@ router.post('/login', async (req, res) => {
         // Generate JWT token
         const token = jwt.sign({ userId: user._id, email: user.email }, JWT_SECRET_KEY, { expiresIn: JWT_VALID_TIME });
 
-        res.cookie('jwtToken', token, { httpOnly: false });
+        res.cookie('jwtToken', token, { maxAge: COOKIE_EXPIRY, httpOnly: false});
+
+        res.cookie('userId', user._id.toString(), { maxAge: COOKIE_EXPIRY, httpOnly: false});
 
         console.log(token)
 

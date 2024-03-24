@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './GetStartedPage.css'; // Import custom CSS file for styling
 
@@ -10,6 +10,34 @@ const GetStartedPage: React.FC = () => {
     const [isExistingUser, setIsExistingUser] = useState(false);
 
     const navigate = useNavigate(); // Initialize useNavigate
+
+    const [isLoading, setIsLoading] = useState(true); // State to track loading state
+
+    useEffect(() => {
+        const jwtToken = getCookie('jwtToken'); // Get JWT token from cookie
+        if (jwtToken) {
+            // JWT token cookie is present, redirect to dashboard page
+            navigate('/dashboard');
+        } else {
+            // JWT token cookie is not present, allow rendering of the GetStartedPage component
+            setIsLoading(false);
+        }
+    }, [navigate]);
+
+    if (isLoading) {
+        return null; // Return null while checking token validity
+    }
+
+    function getCookie(name: string) {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.startsWith(name + '=')) {
+                return cookie.substring(name.length + 1);
+            }
+        }
+        return null;
+    }
 
     const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setEmail(e.target.value);

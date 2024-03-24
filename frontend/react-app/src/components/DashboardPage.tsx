@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './DashboardPage.css';
 import stockerLogo from './images/stocker-logo.svg';
-import {useLocation} from "react-router-dom";
 
 const DashboardPage: React.FC = () => {
     const [dashboardData, setDashboardData] = useState(null);
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedStock, setSelectedStock] = useState('');
     const [isAccountOpen, setIsAccountOpen] = useState(false);
-    const location = useLocation();
 
     useEffect(() => {
         // Fetch dashboard data from API when component mounts
@@ -17,7 +15,7 @@ const DashboardPage: React.FC = () => {
 
     const fetchDashboardData = async () => {
         try {
-            const userId = location.state?.userId;
+            const userId = getCookie('userId');
 
             const jwtToken = getCookie('jwtToken');
 
@@ -113,7 +111,6 @@ const DashboardPage: React.FC = () => {
                                     <td>{holding.quantity}</td>
                                     <td>{holding.avgPrice}</td>
                                     <td>{holding.marketPrice}</td>
-                                    <td>{holding.currentPrice}</td>
                                 </tr>
                             ))}
                             </tbody>

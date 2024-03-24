@@ -9,10 +9,9 @@ export interface DashboardState {
 
 export interface Stock {
     symbol: string;
-    shares: number;
+    quantity: number;
     avgPrice: number;
     marketPrice: number;
-    currentPrice: number;
 }
 
 export const UPDATE_INDEX_DATA = 'UPDATE_INDEX_DATA';

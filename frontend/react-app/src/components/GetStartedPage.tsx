@@ -39,13 +39,14 @@ const GetStartedPage: React.FC = () => {
                         headers: {
                             'Content-Type': 'application/json'
                         },
+                        credentials: 'include',
                         body: JSON.stringify({ email, password })
                     });
 
                     if (response.ok) {
                         const data = await response.json();
                         console.log('Login successful:', data);
-                        navigate('/dashboard'); // Navigate to Dashboard upon successful login
+                        navigate('/dashboard', { state: { userId: data.userId } }); // Navigate to Dashboard upon successful login
                     } else {
                         const errorData = await response.json();
                         console.error('Error logging in:', errorData);
@@ -72,6 +73,7 @@ const GetStartedPage: React.FC = () => {
                     if (response.ok) {
                         const data = await response.json();
                         console.log('Sign-up successful:', data);
+                        navigate('/login');
                         // Optionally, you can redirect the user to another page or show a success message
                     } else {
                         const errorData = await response.json();

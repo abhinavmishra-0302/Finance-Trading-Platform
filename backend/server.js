@@ -7,6 +7,8 @@ const session = require('express-session');
 
 const signupApi = require('./modules/app_user/sign_up');
 const loginApi = require('./modules/app_user/authentication');
+const portfolioApi = require('./modules/user_portfolio/portfolio');
+const stockApi = require('./modules/market_data/stock_market');
 
 const cors = require('cors');
 
@@ -25,7 +27,10 @@ app.use(session({
 }));
 
 
-app.use(cors());
+app.use(cors(
+    {origin: true,
+    credentials: true}
+));
 app.use(express.json());
 
 
@@ -34,6 +39,10 @@ app.use(signupApi);
 
 // Login route
 app.use(loginApi);
+
+app.use(portfolioApi);
+
+app.use(stockApi);
 
 const usersApi = require('./modules/app_user/get_all_users');
 const {connect} = require("mongoose");

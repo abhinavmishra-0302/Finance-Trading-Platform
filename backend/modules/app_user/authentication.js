@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken');
 const { MongoClient, ServerApiVersion} = require('mongodb');
 const mongoose = require('mongoose')
 const User = require('../../model/users_model')
+const {JWT_SECRET_KEY, JWT_VALID_TIME} = require("../../config/config");
 
 const router = express.Router();
 
@@ -30,9 +31,11 @@ router.post('/login', async (req, res) => {
         // Generate JWT token
         const token = jwt.sign({ userId: user._id, email: user.email }, JWT_SECRET_KEY, { expiresIn: JWT_VALID_TIME });
 
+        res.cookie('jwtToken', token, { httpOnly: false });
+
         console.log(token)
 
-        res.status(200).json({ token });
+        res.status(200).json({ token: token, userId: user._id });
     } catch (error) {
         console.error('Error logging in:', error);
         res.status(500).json({ error: 'Failed to login' });

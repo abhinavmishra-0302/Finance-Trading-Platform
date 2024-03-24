@@ -1,25 +1,59 @@
-// src/components/DashboardPage.tsx
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
-import { RootState } from './redux/rootReducer';
+import React, { useState, useEffect } from 'react';
 import './DashboardPage.css';
 import stockerLogo from './images/stocker-logo.svg';
+import {useLocation} from "react-router-dom";
 
 const DashboardPage: React.FC = () => {
-    const dashboard = useSelector((state: RootState) => state.dashboard);
+    const [dashboardData, setDashboardData] = useState(null);
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedStock, setSelectedStock] = useState('');
     const [isAccountOpen, setIsAccountOpen] = useState(false);
+    const location = useLocation();
+
+    useEffect(() => {
+        // Fetch dashboard data from API when component mounts
+        fetchDashboardData();
+    }, []);
+
+    const fetchDashboardData = async () => {
+        try {
+            const userId = location.state?.userId;
+
+            const jwtToken = getCookie('jwtToken');
+
+            console.log('JWT Token:', jwtToken);
+
+            const response = await fetch(`http://localhost:3000/portfolio/${userId}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${jwtToken}`
+                }
+            }); // Change the URL as per your API endpoint
+            if (!response.ok) {
+                throw new Error('Failed to fetch dashboard data');
+            }
+            const data = await response.json();
+            setDashboardData(data);
+        } catch (error) {
+            console.error('Error fetching dashboard data:', error);
+        }
+    };
+
+    const getCookie = (name: string) => {
+        const cookies = document.cookie.split(';');
+        for (const cookie of cookies) {
+            const [cookieName, cookieValue] = cookie.split('=');
+            if (cookieName.trim() === name) {
+                return cookieValue;
+            }
+        }
+        return null;
+    };
 
     const handleSearch = () => {
         // Implement search functionality
         console.log('Searching for:', searchTerm);
-    };
-
-    const handleStockSelect = (stock: string) => {
-        setSelectedStock(stock);
-        // Fetch information for the selected stock
-        console.log('Selected stock:', stock);
     };
 
     const toggleAccountDropdown = () => {
@@ -48,13 +82,13 @@ const DashboardPage: React.FC = () => {
                     <div className="index-mini-portfolio">
                         <div className="index">
                             <h2>Index</h2>
-                            <p>Nifty50: {dashboard.nifty50}</p>
-                            <p>Sensex: {dashboard.sensex}</p>
+                            <p>Nifty50: 0</p>
+                            <p>Sensex: 0</p>
                         </div>
                         <div className="mini-portfolio">
                             <h2>Mini Portfolio</h2>
-                            <p>Total Returns: {dashboard.totalReturns}</p>
-                            <p>Current Value: {dashboard.currentValue}</p>
+                            <p>Total Returns: 0</p>
+                            <p>Current Value: 0</p>
                         </div>
                     </div>
                 </div>
@@ -65,24 +99,23 @@ const DashboardPage: React.FC = () => {
                     <div className="table-container">
                         <table className="table">
                             <thead>
-                                <tr>
-                                    <th>Symbol</th>
-                                    <th>Shares</th>
-                                    <th>Avg. Price</th>
-                                    <th>Market Price</th>
-                                    <th>Current Price</th>
-                                </tr>
+                            <tr>
+                                <th>Symbol</th>
+                                <th>Shares</th>
+                                <th>Avg. Price</th>
+                                <th>Market Price</th>
+                            </tr>
                             </thead>
                             <tbody>
-                                {dashboard.holdings.map((holding, index) => (
-                                    <tr key={index}>
-                                        <td>{holding.symbol}</td>
-                                        <td>{holding.shares}</td>
-                                        <td>{holding.avgPrice}</td>
-                                        <td>{holding.marketPrice}</td>
-                                        <td>{holding.currentPrice}</td>
-                                    </tr>
-                                ))}
+                            {dashboardData && dashboardData.map((holding, index) => (
+                                <tr key={index}>
+                                    <td>{holding.symbol}</td>
+                                    <td>{holding.quantity}</td>
+                                    <td>{holding.avgPrice}</td>
+                                    <td>{holding.marketPrice}</td>
+                                    <td>{holding.currentPrice}</td>
+                                </tr>
+                            ))}
                             </tbody>
                         </table>
                     </div>

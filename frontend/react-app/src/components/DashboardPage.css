@@ -1,18 +1,21 @@
 /* src/components/DashboardPage.css */
 
 .container {
-    margin-top: 50px;
+    margin: 0px;
 }
 
 .top-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    background-color: white; /* Set background color for the top bar */
+    padding: 10px 20px; /* Add padding to the top bar */
+    border-bottom: 1px solid #0056b3; /* Add a border bottom for separation */
+    margin-bottom: 30px;
 }
 
 .logo-container {
-    display: flex;
+    display: compact;
     align-items: center;
 }
 
@@ -22,52 +25,69 @@
     margin-right: 10px;
 }
 
-.account-dropdown {
-    position: relative;
+.search-account-container {
+    display: flex;
+    align-items: center;
 }
 
+.search-bar {
+    margin-right: 20px; /* Add some right margin between search bar and account button */
+}
+
+.search-input {
+    padding: 8px 12px; /* Adjust input padding */
+    border: 2px solid #0056b3; /* Add border to input */
+    border-radius: 5px; /* Add border radius */
+}
+
+.search-button{
+    background-color: #0056b3; /* Set background color for buttons */
+    color: #fff; /* Set text color */
+    border: none; /* Remove button border */
+    border-radius: 5px; /* Add border radius */
+    padding: 8px 16px; /* Adjust button padding */
+    cursor: pointer; /* Add cursor pointer */
+    margin-left: 20px;
+}
 .account-button {
-    background-color: #000000;
-    /* Set background color for the account button */
-    color: #000000;
-    /* Set text color */
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    padding: 8px 12px;
+    background-color: #0056b3; /* Set background color for buttons */
+    color: #fff; /* Set text color */
+    border: none; /* Remove button border */
+    border-radius: 5px; /* Add border radius */
+    padding: 8px 16px; /* Adjust button padding */
+    cursor: pointer; /* Add cursor pointer */
+}
+
+.search-button:hover,
+.account-button:hover {
+    background-color: #004080; /* Darken background color on hover */
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    top: calc(100% + 5px);
-    /* Adjust distance from the button */
-    right: 0;
-    background-color: #fff;
-    /* Set background color for dropdown content */
+    background-color: #f9f9f9; /* Set background color for dropdown */
     min-width: 120px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    border-radius: 5px;
-    padding: 5px 0;
-    /* Add padding to the dropdown */
+    border-radius: 5px; /* Add border radius */
+    padding: 5px 0; /* Add padding */
 }
 
 .dropdown-item {
-    display: block;
     padding: 10px;
     text-decoration: none;
     color: #333;
+    display: block;
     cursor: pointer;
 }
 
 .dropdown-item:hover {
-    background-color: #f1f1f1;
+    background-color: #f1f1f1; /* Change background color on hover */
 }
 
 .account-dropdown:hover .dropdown-content {
-    display: block;
+    display: block; /* Show dropdown content on hover */
 }
 
 
@@ -75,6 +95,7 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;
+    margin-top: 30px;
 }
 
 .col-md-8 {
@@ -82,235 +103,137 @@
     max-width: 66.666667%;
 }
 
-.index-mini-portfolio {
-    display: flex;
-    justify-content: space-between;
-}
-
-.index,
-.mini-portfolio {
-    background-color: #f8f9fa;
-    padding: 20px;
+.card {
+    border: none;
     border-radius: 8px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
+
+.card-title {
+    color: #007bff;
+}
+
+.index-info {
+    display: flex;
+    flex-direction: row; /* Changed to row */
+    justify-content: space-between; /* Added */
+}
+
+.index-item {
+    width: 48%; /* Adjust width as needed */
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.index-name {
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 25px;
+}
+
+.index-value {
+    font-weight: bold;
+    color: #007bff;
+    font-size: 25px;
+}
+
+
+.portfolio-info {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.portfolio-item {
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.portfolio-name {
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 25px;
+}
+
+.portfolio-value {
+    color: #007bff;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+/* styles.css */
 
 .table-container {
     overflow-x: auto;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    height: fit-content;
 }
 
 .table {
     width: 100%;
     border-collapse: collapse;
+    border-radius: 8px;
 }
 
 .table th,
 .table td {
-    padding: 10px;
+    padding: 12px 16px;
     text-align: center;
+    border-bottom: 1px solid #f2f2f2;
+    font-size: 20px;
 }
 
 .table th {
     background-color: #007bff;
-    color: #fff;
+    color: blue;
+    font-weight: bold;
+    font-size: 23px;
 }
 
 .table tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: blue;
 }
 
-.search-bar {
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
+.table tbody tr:nth-child(odd) {
+    background: #e9ecef;
 }
 
-.search-input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ced4da;
-    border-radius: 5px;
-}
-
-.search-button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    margin-left: 10px;
-    cursor: pointer;
+.table tbody tr:hover {
+    background: lightblue;
 }
 
 .selected-stock {
     margin-top: 20px;
     padding: 20px;
     background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
-.container {
-    margin-top: 50px;
-    }
-    
-    .top-bar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 20px;
-    }
-    
-    .logo-container {
-        display: flex;
-        align-items: center;
-    }
-    
-    .logo-image {
-        width: 40px;
-        height: auto;
-        margin-right: 10px;
-    }
-    
-    .account-dropdown {
-        position: relative;
-    }
-    
-    .account-button {
-        background: none;
-        border: none;
-        cursor: pointer;
-        color: #007bff;
-        /* Set color for the account button */
-        font-size: 16px;
-        /* Enlarge the font size */
-        padding: 8px 12px;
-        /* Adjust padding */
-    }
-    
-    .dropdown-content {
-        display: none;
-        /* Hide dropdown content by default */
-        position: absolute;
-        top: 30px;
-        right: 0;
-        background-color: #fff;
-        /* Set background color for dropdown content */
-        min-width: 120px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-    }
-    
-    .dropdown-item {
-        display: block;
-        padding: 10px;
-        text-decoration: none;
-        color: #333;
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-    }
-    
-    .dropdown-item:hover {
-        background-color: #f1f1f1;
-    }
-    
-    .account-dropdown:hover .dropdown-content {
-        display: block;
-        /* Show dropdown content on hover */
-    }
-    
-    .row {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 30px;
-    }
-    
-    .col-md-8 {
-        flex: 0 0 66.666667%;
-        max-width: 66.666667%;
-    }
-    
-    .index-mini-portfolio {
-        display: flex;
-        justify-content: space-between;
-    }
-    
-    .index,
-    .mini-portfolio {
-        background-color: #f8f9fa;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    }
-    
-    .table-container {
-        overflow-x: auto;
-    }
-    
-    .table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-    
-    .table th,
-    .table td {
-        padding: 10px;
-        text-align: center;
-    }
-    
-    .table th {
-        background-color: #007bff;
-        color: #fff;
-    }
-    
-    .table tbody tr:nth-child(even) {
-        background-color: #f2f2f2;
-    }
-    
-    .search-bar {
-        margin-top: 20px;
-        display: flex;
-        align-items: center;
-    }
-    
-    .search-input {
-        flex: 1;
-        padding: 10px;
-        border: 1px solid #ced4da;
-        border-radius: 5px;
-    }
-    
-    .search-button {
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        padding: 10px 20px;
-        margin-left: 10px;
-        cursor: pointer;
-    }
-    
-    .selected-stock {
-        margin-top: 20px;
-    padding: 20px;
-    background-color: #f8f9fa;
-        border-radius: 8px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    }
-    
-    /* Adjustments for Account button */
-    .account-button {
-        margin-right: 20px;
-        /* Add some right margin */
-    }
-    
-    /* Adjust dropdown styles */
-    .dropdown-content {
-        top: 40px;
-        /* Move dropdown a bit down */
-        min-width: 140px;
-        /* Increase minimum width */
-    }
-    
-    .dropdown-item {
-        width: 100%;
-        text-align: left;
+
+/* Adjustments for Account button */
+.account-button {
+    margin-right: 20px;
+    /* Add some right margin */
+}
+
+/* Adjust dropdown styles */
+.dropdown-content {
+    top: 40px;
+    /* Move dropdown a bit down */
+    min-width: 140px;
+    /* Increase minimum width */
+}
+
+.dropdown-item {
+    width: 100%;
+    text-align: left;
 }

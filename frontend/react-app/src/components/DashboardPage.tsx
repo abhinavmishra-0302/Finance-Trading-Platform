@@ -16,18 +16,14 @@ const DashboardPage: React.FC = () => {
     const fetchDashboardData = async () => {
         try {
             const userId = getCookie('userId');
-
             const jwtToken = getCookie('jwtToken');
-
-            console.log('JWT Token:', jwtToken);
-
             const response = await fetch(`http://localhost:3000/portfolio/${userId}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${jwtToken}`
                 }
-            }); // Change the URL as per your API endpoint
+            });
             if (!response.ok) {
                 throw new Error('Failed to fetch dashboard data');
             }
@@ -61,73 +57,75 @@ const DashboardPage: React.FC = () => {
     return (
         <div className="container">
             <div className="top-bar">
-                <div className="logo-container">
-                    <img src={stockerLogo} alt="Stocker Logo" className="logo-image" />
-                </div>
-                <div className="account-dropdown">
-                    <button className="account-button" onClick={toggleAccountDropdown}>Account</button>
-                    {isAccountOpen && (
-                        <div className="dropdown-content">
-                            <button className="dropdown-item">Portfolio</button>
-                            <button className="dropdown-item">Logout</button>
-                        </div>
-                    )}
+                    <div className="logo-container">
+                        <img src={stockerLogo} alt="Logo" className="logo-image"/>
+                    </div>
+                    <div className="search-bar">
+                        <input type="text" placeholder="Search..." className="search-input"/>
+                            <button className="search-button">Search</button>
                 </div>
             </div>
-            <h1>Dashboard</h1>
+            <h1><b>Dashboard</b></h1>
             <div className="row">
                 <div className="col-md-8">
-                    <div className="index-mini-portfolio">
-                        <div className="index">
-                            <h2>Index</h2>
-                            <p>Nifty50: 0</p>
-                            <p>Sensex: 0</p>
-                        </div>
-                        <div className="mini-portfolio">
-                            <h2>Mini Portfolio</h2>
-                            <p>Total Returns: 0</p>
-                            <p>Current Value: 0</p>
+                    <div className="card">
+                        <div className="card-body">
+                            <h2 className="card-title">Index</h2>
+                            <div className="index-info">
+                                <div className="index-item">
+                                    <p className="index-name">Nifty 50</p>
+                                    <p className="index-value">0</p>
+                                </div>
+                                <div className="index-item">
+                                    <p className="index-name">Sensex</p>
+                                    <p className="index-value">0</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-md-12">
-                    <h2>Holdings</h2>
+                    <h2><b>Holdings</b></h2>
                     <div className="table-container">
                         <table className="table">
                             <thead>
                             <tr>
-                                <th>Symbol</th>
+                                <th>Company</th>
                                 <th>Shares</th>
                                 <th>Avg. Price</th>
                                 <th>Market Price</th>
                             </tr>
                             </thead>
                             <tbody>
-                            {dashboardData && dashboardData.map((holding, index) => (
-                                <tr key={index}>
-                                    <td>{holding.symbol}</td>
-                                    <td>{holding.quantity}</td>
-                                    <td>{holding.avgPrice}</td>
-                                    <td>{holding.marketPrice}</td>
-                                </tr>
-                            ))}
+                                {dashboardData && dashboardData.map((holding, index) => (
+                                    <tr key={index}>
+                                        <td>{holding.symbol}</td>
+                                        <td>{holding.quantity}</td>
+                                        <td>{holding.avgPrice}</td>
+                                        <td>{holding.marketPrice}</td>
+                                    </tr>
+                                ))}
                             </tbody>
                         </table>
                     </div>
                 </div>
+                <div className="col-md-4">
+                    <div className="card">
+                        <div className="card-body">
+                            <h2 className="card-title">Mini Portfolio</h2>
+                            <div className="portfolio-info">
+                                <div className="portfolio-item">
+                                    <p className="portfolio-name">Total Returns</p>
+                                    <p className="portfolio-value">0</p>
+                                </div>
+                                <div className="portfolio-item">
+                                    <p className="portfolio-name">Holdings Value</p>
+                                    <p className="portfolio-value">0</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div className="search-bar">
-                <input
-                    type="text"
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    placeholder="Search for stocks..."
-                    className="search-input"
-                />
-                <button className="search-button" onClick={handleSearch}>Search</button>
-            </div>
+
             {selectedStock && (
                 <div className="selected-stock">
                     <h2>Selected Stock: {selectedStock}</h2>

@@ -26,7 +26,7 @@ router.post('/login', async (req, res) => {
         // Generate JWT token
         const token = jwt.sign({ userId: user._id, email: user.email }, JWT_SECRET_KEY, { expiresIn: JWT_VALID_TIME });
 
-        res.cookie('jwtToken', token, { maxAge: COOKIE_EXPIRY, httpOnly: false});
+        res.cookie('jwtToken', token, { maxAge: COOKIE_EXPIRY, httpOnly: false, sameSite: false});
 
         res.cookie('userId', user._id.toString(), { maxAge: COOKIE_EXPIRY, httpOnly: false});
 

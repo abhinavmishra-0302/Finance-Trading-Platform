@@ -2,28 +2,40 @@ const express = require('express');
 const Portfolio = require('../../model/portfolio_model')
 const UserProperties = require('../../model/user_properties_model')
 const jwt = require("jsonwebtoken");
-const {verifyToken } = require('../../utils/verify_token');
+const {verifyToken} = require('../../utils/verify_token');
 
 const router = express.Router();
 
 router.get('/portfolio/:userId', verifyToken, async (req, res) => {
-    const { userId } = req.params;
+    const {userId} = req.params;
     try {
         // Query the database to retrieve user's portfolio
-        const portfolio = await Portfolio.findOne({ userId });
+        const portfolio = await Portfolio.findOne({userId});
         res.json(portfolio.stocks);
     } catch (error) {
         console.error('Error fetching user portfolio:', error);
-        res.status(500).json({ error: 'Failed to fetch user portfolio' });
+        res.status(500).json({error: 'Failed to fetch user portfolio'});
+    }
+});
+
+router.get('/portfolio/holding/:userId', verifyToken, async (req, res) => {
+    const {userId} = req.params;
+    try {
+        // Query the database to retrieve user's portfolio
+        const portfolio = await UserProperties.findOne({userId});
+        res.json(portfolio);
+    } catch (error) {
+        console.error('Error fetching user portfolio:', error);
+        res.status(500).json({error: 'Failed to fetch user portfolio'});
     }
 });
 
 // Add stock portfolio API endpoint
 router.post('/portfolio/:userId', async (req, res) => {
-    const { userId } = req.params;
-    const { stock } = req.body;
+    const {userId} = req.params;
+    const {stock} = req.body;
 
-    let userProperties = UserProperties.findOne({userId});
+    let userProperties = await UserProperties.findOne({userId});
 
     let currentBalance = userProperties.balance;
 
@@ -33,7 +45,7 @@ router.post('/portfolio/:userId', async (req, res) => {
 
     console.log(currentBalance, transactionValue)
 
-    if (currentBalance >= transactionValue) {
+    if (userProperties && currentBalance >= transactionValue) {
         try {
             let portfolio = await Portfolio.findOne({userId});
 
@@ -42,23 +54,38 @@ router.post('/portfolio/:userId', async (req, res) => {
                 portfolio = new Portfolio({userId, stocks: []});
             }
 
-            // Push the new stock to the user's portfolio
-            portfolio.stocks.push(stock);
+            const existingStockIndex = portfolio.stocks.findIndex(oldStock => oldStock.symbol === stock.symbol);
 
-            userProperties.updateOne({userId: userId}, {$set: {balance: currentBalance - transactionValue, holdingValue: holdingValue + transactionValue}})
+            if (existingStockIndex != -1) {
 
-            // Save the updated portfolio to the database
-            await portfolio.save();
+                portfolio.stocks[existingStockIndex].quantity += stock.quantity;
+                portfolio.stocks[existingStockIndex].avgPrice = (portfolio.stocks[existingStockIndex].avgPrice + stock.avgPrice)/2;
 
-            await userProperties.save();
+                userProperties.balance = currentBalance - transactionValue;
+                userProperties.holdingValue = holdingValue + transactionValue;
+
+                await portfolio.save();
+
+                await userProperties.save();
+            } else {
+                // Push the new stock to the user's portfolio
+                portfolio.stocks.push(stock);
+
+                userProperties.balance = currentBalance - transactionValue;
+                userProperties.holdingValue = holdingValue + transactionValue;
+
+                // Save the updated portfolio to the database
+                await portfolio.save();
+
+                await userProperties.save();
+            }
 
             res.status(201).json({message: 'Stock added to portfolio'});
         } catch (error) {
             console.error('Error adding stock to user portfolio:', error);
             res.status(500).json({error: 'Failed to add stock to user portfolio'});
         }
-    }
-    else {
+    } else {
         console.error('Balance not enough');
         res.status(500).json({error: 'Balance not enough'});
     }

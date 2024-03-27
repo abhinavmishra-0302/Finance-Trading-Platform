@@ -2,7 +2,7 @@ const express = require('express');
 const bcrypt = require('bcrypt');
 const { MongoClient, ServerApiVersion} = require('mongodb');
 const User = require('../../model/users_model')
-// const {DB_NAME} = require("../../config/config");
+const UserProperties = require('../../model/user_properties_model');
 
 const router = express.Router();
 
@@ -26,6 +26,9 @@ router.post('/signup', async (req, res) => {
         // Insert new user into the database
         const newUser = new User({ name, email, password: hashedPassword });
         await newUser.save();
+
+        const userProperties = new UserProperties({ userId: newUser._id, balance: 10000, holdingValue: 0 });
+        await userProperties.save();
 
         res.status(201).json({ message: 'User created successfully', newUser });
     } catch (error) {

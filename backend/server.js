@@ -44,7 +44,7 @@ app.use(portfolioApi);
 
 // app.use(stockApi);
 
-const usersApi = require('./modules/app_user/get_all_users');
+// const usersApi = require('./modules/app_user/get_all_users');
 const {connect} = require("mongoose");
 
 
@@ -53,7 +53,7 @@ connect(
     )
     .then(() => console.log("Database connected!"));
 
-app.use('/users', usersApi);
+// app.use('/users', usersApi);
 
 // Start server
 const PORT = process.env.PORT || 3000;

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
-import './GetStartedPage.css'; // Import custom CSS file for styling
+import './GetStartedPage.css';
 
 const GetStartedPage: React.FC = () => {
     const [email, setEmail] = useState('');
@@ -101,7 +101,6 @@ const GetStartedPage: React.FC = () => {
                     if (response.ok) {
                         const data = await response.json();
                         console.log('Sign-up successful:', data);
-                        navigate('/login');
                         // Optionally, you can redirect the user to another page or show a success message
                     } else {
                         const errorData = await response.json();

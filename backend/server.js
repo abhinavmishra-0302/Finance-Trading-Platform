@@ -42,7 +42,7 @@ app.use(loginApi);
 
 app.use(portfolioApi);
 
-app.use(stockApi);
+// app.use(stockApi);
 
 // const usersApi = require('./modules/app_user/get_all_users');
 const {connect} = require("mongoose");

@@ -175,7 +175,6 @@ The Financial Trading Platform is a web-based application developed to facilitat
 #### 3.1.3 Role-based Access Control
 
 - **Requirements:**
-  - Different user roles (e.g., admin, trader) with specific access privileges.
   - Role assignment and management by administrators.
 
 ### 3.2 Trading Features
@@ -333,16 +332,14 @@ The Financial Trading Platform is a web-based application developed to facilitat
 ### 5.1 Frontend
 
 - **Frameworks:** React.js, Redux
-- **Real-time Updates:** WebSocket
 
 ### 5.2 Backend
 
-- **Frameworks:** Node.js, Express.js, Python (Algorithmic Trading), Django (Backend Services)
+- **Frameworks:** Node.js, Express.js, Python (Algorithmic Trading)
 
 ### 5.3 Database
 
 - **Real-time Data:** MongoDB
-- **Relational Data:** PostgreSQL
 
 ### 5.4 Machine Learning
 
@@ -366,8 +363,8 @@ The Financial Trading Platform is a web-based application developed to facilitat
 - **Server Software:**
   - Operating System: Linux-based distribution (e.g., Ubuntu Server).
   - Web Server: Nginx or Apache.
-  - Database Management System: MongoDB for real-time data, PostgreSQL for relational data.
-  - Backend Frameworks: Node.js, Express.js, Python, Django.
+  - Database Management System: MongoDB for real-time data
+  - Backend Frameworks: Node.js, Express.js, Python
 
 - **Client Software:**
   - Web Browser: Google Chrome, Mozilla Firefox, Safari.
